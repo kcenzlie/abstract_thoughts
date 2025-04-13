@@ -8,7 +8,7 @@
   align-items: flex-start;
   width: 250px; /* Set a fixed width for the sidebar */
   height: 100vh; /* Full height of the viewport */
-  padding: 1rem;
+  padding: 2rem 1.5rem;
   background-color: #ffeb3b; /* 黄色主题 */
   box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
   position: fixed; /* Fix the navbar to the left side */
@@ -24,13 +24,16 @@
 }
 
 /* 品牌样式 */
+.navbar-brand {
+  margin-bottom: 2rem;
+}
+
 .navbar-brand a {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
-  margin-bottom: 1rem; /* Add spacing below the brand */
 }
 
 .navbar-brand a:hover {
@@ -39,29 +42,43 @@
 
 /* 链接容器样式 */
 .navbar-links {
-  margin-bottom: 1rem; /* Add spacing between links */
+  margin-bottom: 1.5rem;
 }
 
 /* 链接样式 */
 .navbar-links a {
-  font-size: 1rem;
+  display: block;
+  font-size: 1.1rem;
   color: #333;
   text-decoration: none;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
   position: relative;
-  transition: color 0.3s ease;
 }
 
 /* 链接样式 - 消息通知心形 */
 .notification-heart {
-  color: red;
-  font-size: 1rem;
-  margin-left: 5px;
-  position: relative;
-  top: -2px;
+  display: inline-block;
+  color: #ff4081;
+  margin-left: 0.5rem;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .navbar-links a:hover {
   color: #000;
+  transform: translateX(5px);
 }
 
 /* 链接下划线动画 */
@@ -98,10 +115,15 @@
 /* 响应式设计 */
 @media (max-width: 768px) {
   .navbar {
-      width: 200px; /* Adjust width for smaller screens */
+    width: 200px;
+    padding: 1.5rem 1rem;
   }
 
-  .main-content {
-      margin-left: 200px; /* Adjust margin for smaller screens */
+  .navbar-brand a {
+    font-size: 1.3rem;
+  }
+
+  .navbar-links a {
+    font-size: 1rem;
   }
 }
