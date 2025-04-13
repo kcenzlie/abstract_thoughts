@@ -1,56 +1,69 @@
-import Write from './pages/Write'
-import DataDisplay from './pages/DataDisplay'
-import './css/App.css'
-import {Routes, Route} from "react-router-dom";
+import React from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Register from './pages/Register';
-import Login from './pages/Login';
 import Home from './pages/Home';
+import Write from './pages/Write';
+import Message from './pages/Message';
+import Profile from './pages/Profile';
+import Login from './pages/Login';
+import './App.css';
+import { AuthProvider } from './context/auth-context';
+import DataDisplay from './pages/DataDisplay';
 import Dashboard from './pages/Dashboard';
 import Wrapper from './pages/Wrapper';
 import Comments from './components/Comments';
-import { AuthProvider } from './context/auth-context';
-import Message from './pages/Message';
+import Register from './pages/Register';
 import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
-    <div>
+    <Router>
       <ErrorBoundary>
-        <NavBar />
-      </ErrorBoundary>
-
-      <main className="main-content">
         <AuthProvider>
-          <Routes>
-            <Route path="/" element={<Home />}/>
-            <Route path="/write" element={<Write />}/>
-            <Route path="/register" element={<Register />}/>
-            <Route path="/login" element={<Login />}/>
-            <Route 
-              path="/dashboard" 
-              element={
-                <Wrapper>
-                  <Dashboard />
-                </Wrapper>
-              }
-            />
-            <Route 
-              path="/message" 
-              element={
-                <Wrapper>
-                  <Message />
-                </Wrapper>
-              }
-            />
-          </Routes>
+          <div className="App">
+            <NavBar />
+            <main className="main-content">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/write" element={<Write />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/message" element={<Message />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route 
+                  path="/dashboard" 
+                  element={
+                    <Wrapper>
+                      <Dashboard />
+                    </Wrapper>
+                  }
+                />
+                <Route 
+                  path="/data-display" 
+                  element={
+                    <Wrapper>
+                      <DataDisplay />
+                    </Wrapper>
+                  }
+                />
+                <Route 
+                  path="/comments" 
+                  element={
+                    <Wrapper>
+                      <Comments />
+                    </Wrapper>
+                  }
+                />
+              </Routes>
+            </main>
+          </div>
         </AuthProvider>
-      </main>
-    </div>
-  )
+      </ErrorBoundary>
+    </Router>
+  );
 }
 
-export default App
+export default App;
 
 
 // https://www.youtube.com/watch?v=_sSTzz13tVY 拯救我的tutorial
