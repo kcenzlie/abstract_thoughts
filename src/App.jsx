@@ -4,11 +4,9 @@ import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import Write from './pages/Write';
 import Message from './pages/Message';
-import Profile from './pages/Profile';
 import Login from './pages/Login';
-import './App.css';
+import './css/App.css';
 import { AuthProvider } from './context/auth-context';
-import DataDisplay from './pages/DataDisplay';
 import Dashboard from './pages/Dashboard';
 import Wrapper from './pages/Wrapper';
 import Comments from './components/Comments';
@@ -29,20 +27,11 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/message" element={<Message />} />
-                <Route path="/profile" element={<Profile />} />
                 <Route 
                   path="/dashboard" 
                   element={
                     <Wrapper>
                       <Dashboard />
-                    </Wrapper>
-                  }
-                />
-                <Route 
-                  path="/data-display" 
-                  element={
-                    <Wrapper>
-                      <DataDisplay />
                     </Wrapper>
                   }
                 />

@@ -70,9 +70,11 @@ body {
 
 /* 主要内容区域样式 */
 .main-content {
-  padding: 2rem;
+  flex: 1;
+  padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
   animation: fadeIn 1s ease;
   height: calc(100vh - 60px); /* 减去导航栏高度 */
 }
@@ -101,3 +103,12 @@ body {
       padding: 1rem;
   }
 }
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add any additional styles you need */
