@@ -5,9 +5,10 @@
   "homepage": "https://kcenzlie.github.io/abstract_thoughts",
   "type": "module",
   "scripts": {
+    "clean-build": "rm -rf dist node_modules/.vite",
+    "build": "vite build",
     "predeploy": "npm run build && cp public/vite.svg dist/abstract_thoughts/",
     "deploy": "gh-pages -d dist -b main",
-    "build": "vite build",
     "postbuild": "cp .nojekyll dist/",
     "dev": "vite",
     "lint": "eslint .",
