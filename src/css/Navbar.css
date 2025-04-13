@@ -4,23 +4,13 @@
 .navbar {
   display: flex;
   flex-direction: column; /* Stack items vertically */
-  justify-content: flex-start;
-  align-items: flex-start;
   width: 250px; /* Set a fixed width for the sidebar */
-  height: 100vh; /* Full height of the viewport */
-  padding: 2rem 1.5rem;
   background-color: #ffeb3b; /* 黄色主题 */
   box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
   position: fixed; /* Fix the navbar to the left side */
   top: 0;
   left: 0;
   z-index: 1000;
-}
-
-/* 内容区域调整 */
-.main-content {
-  margin-left: 250px; /* Add left margin to account for the navbar width */
-  padding: 1rem;
 }
 
 /* 品牌样式 */
@@ -40,20 +30,14 @@
   color: #000;
 }
 
-/* 链接容器样式 */
-.navbar-links {
-  margin-bottom: 1rem; /* Reduced spacing */
-}
-
 /* 链接样式 */
 .navbar-links a {
   display: block;
   font-size: 1.1rem;
   color: #333;
   text-decoration: none;
-  padding: 0.3rem 0; /* Reduced padding */
+  padding: 0.1rem 0; /* Further reduced padding to bring links closer */
   transition: all 0.3s ease;
-  position: relative;
 }
 
 /* 链接样式 - 消息通知心形 */
@@ -98,18 +82,6 @@
 .navbar-links a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
-}
-
-/* 红点样式 */
-.notification-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background-color: red;
-  border-radius: 50%;
-  margin-left: 5px;
-  position: relative;
-  top: -2px;
 }
 
 /* 响应式设计 */

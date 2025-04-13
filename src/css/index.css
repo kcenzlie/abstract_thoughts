@@ -8,6 +8,13 @@
   --background-end: #ffffff;     /* 渐变结束白 */
 }
 
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure full height coverage */
+  width: 100%;  /* Ensure full width coverage */
+}
+
 body {
   margin: 0;
   padding: 0;

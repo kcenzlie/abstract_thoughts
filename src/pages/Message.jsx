@@ -143,7 +143,9 @@ const Message = () => {
                                 padding: '10px',
                                 marginBottom: '10px',
                                 borderRadius: '5px',
-                                border: '1px solid #eee'
+                                border: '1px solid #eee',
+                                maxWidth: '100%', /* Prevent card from overflowing */
+                                wordWrap: 'break-word' /* Ensure long text wraps */
                             }}>
                                 <div>
                                     <h3>{post.post}</h3>
