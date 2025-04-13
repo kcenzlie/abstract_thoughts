@@ -15,7 +15,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/abstract_thoughts">
       <ErrorBoundary>
         <AuthProvider>
           <div className="App">
