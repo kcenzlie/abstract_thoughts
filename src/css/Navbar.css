@@ -25,7 +25,7 @@
 
 /* 品牌样式 */
 .navbar-brand {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem; /* Reduced spacing */
 }
 
 .navbar-brand a {
@@ -42,7 +42,7 @@
 
 /* 链接容器样式 */
 .navbar-links {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* Reduced spacing */
 }
 
 /* 链接样式 */
@@ -51,7 +51,7 @@
   font-size: 1.1rem;
   color: #333;
   text-decoration: none;
-  padding: 0.5rem 0;
+  padding: 0.3rem 0; /* Reduced padding */
   transition: all 0.3s ease;
   position: relative;
 }

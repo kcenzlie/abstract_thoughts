@@ -4,7 +4,7 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
 }
@@ -15,23 +15,25 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #ffeb3b; /* 黄色主题 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; /* 纯色背景 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-radius: 0 0 10px 10px;
 }
 
 .navbar-brand a {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #333;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-brand a:hover {
   color: #000;
+  transform: scale(1.1);
 }
 
 .navbar-links {
@@ -44,11 +46,12 @@ body {
   color: #333;
   text-decoration: none;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-links a:hover {
   color: #000;
+  transform: scale(1.1);
 }
 
 .navbar-links a::after {
@@ -72,11 +75,11 @@ body {
 /* 主要内容区域样式 */
 .main-content {
   flex: 1;
-  margin-left: 250px; /* Match the navbar width */
   padding: 2rem;
   min-height: 100vh;
   background-color: #ffffff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   animation: fadeIn 1s ease;
 }
 
@@ -95,7 +98,7 @@ body {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
@@ -114,7 +117,6 @@ body {
   }
 
   .main-content {
-    margin-left: 200px; /* Match the navbar width for smaller screens */
     padding: 1rem;
   }
 }
@@ -122,10 +124,9 @@ body {
 .App {
   display: flex;
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
+  padding: 1rem;
 }
-
-/* Add any additional styles you need */
 
 /* 全局样式重置 */
 * {
