@@ -1,21 +1,6 @@
-/* NavBar.css */
 
-/* 基础样式 */
-.navbar {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  width: 250px; /* Set a fixed width for the sidebar */
-  background-color: #ffeb3b; /* 黄色主题 */
-  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
-  position: fixed; /* Fix the navbar to the left side */
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-/* 品牌样式 */
 .navbar-brand {
-  margin-bottom: 1rem; /* Reduced spacing */
+  margin-bottom: 1rem; 
 }
 
 .navbar-brand a {
@@ -28,24 +13,6 @@
 
 .navbar-brand a:hover {
   color: #000;
-}
-
-/* 链接样式 */
-.navbar-links a {
-  display: block;
-  font-size: 1.1rem;
-  color: #333;
-  text-decoration: none;
-  padding: 0.1rem 0; /* Further reduced padding to bring links closer */
-  transition: all 0.3s ease;
-}
-
-/* 链接样式 - 消息通知心形 */
-.notification-heart {
-  display: inline-block;
-  color: #ff4081;
-  margin-left: 0.5rem;
-  animation: pulse 1s infinite;
 }
 
 @keyframes pulse {

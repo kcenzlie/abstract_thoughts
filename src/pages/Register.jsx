@@ -25,16 +25,17 @@ const Register = () => {
     };
   
     return (
-      <div className="register-container">
-        <h2>Register</h2>
-        {message && <div className="message">{message}</div>}
-        <form onSubmit={handleSubmit}>
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <h2 className="text-2xl font-bold mb-4">Register</h2>
+        {message && <div className="text-red-500 mb-4">{message}</div>}
+        <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
             required
+            className="border border-gray-300 rounded px-4 py-2 w-64"
           />
           <input
             type="password"
@@ -42,11 +43,14 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             required
+            className="border border-gray-300 rounded px-4 py-2 w-64"
           />
-          <button type="submit">Create Account</button>
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            Create Account
+          </button>
         </form>
-        <p>
-          Already have an account? <Link to="/login">Login</Link>
+        <p className="mt-4">
+          Already have an account? <Link to="/login" className="text-blue-500 hover:underline">Login</Link>
         </p>
       </div>
     );

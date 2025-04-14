@@ -69,16 +69,18 @@ const Dashboard = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Hello, you are logged in.</h1>
-            <button onClick={signOut}>Sign out.</button>
+        <div className="p-4">
+            <h1 className="text-2xl font-bold mb-4">Hello, you are logged in.</h1>
+            <button onClick={signOut} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                Sign out
+            </button>
 
-            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+            {errorMessage && <p className="text-red-500 mt-4">{errorMessage}</p>}
             {randomPost ? (
-                <div>
-                    <h2>Random Post</h2>
-                    <p>{randomPost.post}</p>
-                    <small>Posted on: {new Date(randomPost.created_at).toLocaleString()}</small>
+                <div className="mt-4 p-4 border border-gray-300 rounded">
+                    <h2 className="text-xl font-bold">Random Post</h2>
+                    <p className="mt-2">{randomPost.post}</p>
+                    <small className="text-gray-500">Posted on: {new Date(randomPost.created_at).toLocaleString()}</small>
                     <Comments
                         postId={randomPost.id}
                         initialComments={randomPost.Comments}
@@ -86,7 +88,7 @@ const Dashboard = () => {
                     />
                 </div>
             ) : (
-                <p>Loading a random post...</p>
+                <p className="mt-4">Loading a random post...</p>
             )}
         </div>
     );

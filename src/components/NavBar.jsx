@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import '../css/NavBar.css';
 import supabase from "../helper/supabaseClient";
 
 const NavBar = () => {
@@ -137,23 +136,17 @@ const NavBar = () => {
     };
 
     return (
-        <nav className="navbar">
-            <div className="navbar-brand">
-                <Link to="/">Home</Link>
+        <nav className="flex flex-col w-64 bg-yellow-300 shadow-md fixed top-0 left-0 z-50">
+            <div className="mb-4">
+                <Link to="/" className="text-xl font-bold text-gray-800 hover:text-black">Home</Link>
             </div>
-            <div className="navbar-links">
-                <Link to="/write">Write</Link>
-            </div>
-            <div className="navbar-links">
-                <Link to="/dashboard">Dashboard</Link>
-            </div>
-            <div className="navbar-links">
-                <Link to="/message" onClick={handleMessageClick}>
+            <div className="space-y-2">
+                <Link to="/write" className="block text-lg text-gray-800 hover:text-black">Write</Link>
+                <Link to="/dashboard" className="block text-lg text-gray-800 hover:text-black">Dashboard</Link>
+                <Link to="/message" className="block text-lg text-gray-800 hover:text-black" onClick={handleMessageClick}>
                     Message 
                     {hasNewComments && (
-                        <span className="notification-heart" style={{
-                            animation: 'pulse 1s infinite'
-                        }}>💗</span>
+                        <span className="text-pink-500 ml-2 animate-pulse">💗</span>
                     )}
                 </Link>
             </div>

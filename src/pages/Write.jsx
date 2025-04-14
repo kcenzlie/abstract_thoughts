@@ -50,17 +50,19 @@ const Write = () => {
     };
 
     return (
-        <div>
-            {errorMessage && <div className="error-message">{errorMessage}</div>}
-            {isSubmitted && !errorMessage && <div className="success-message">Post submitted successfully!</div>}
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+            {errorMessage && <div className="text-red-500 mb-4">{errorMessage}</div>}
+            {isSubmitted && !errorMessage && <div className="text-green-500 mb-4">Post submitted successfully!</div>}
+            <form onSubmit={handleSubmit} className="space-y-4">
+                <textarea
                     value={post}
                     onChange={(e) => setPost(e.target.value)}
                     placeholder="Enter your crazy thoughts..."
+                    className="border border-gray-300 rounded px-4 py-2 w-64 h-32"
                 />
-                <button type="submit">Submit</button>
+                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    Submit
+                </button>
             </form>
         </div>
     );

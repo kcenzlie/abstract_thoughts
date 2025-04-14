@@ -25,16 +25,17 @@ const Login = () => {
     };
   
     return (
-      <div className="login-container">
-        <h2>Login</h2>
-        {message && <div className="message error">{message}</div>}
-        <form onSubmit={handleSubmit}>
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <h2 className="text-2xl font-bold mb-4">Login</h2>
+        {message && <div className="text-red-500 mb-4">{message}</div>}
+        <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
             required
+            className="border border-gray-300 rounded px-4 py-2 w-64"
           />
           <input
             type="password"
@@ -42,11 +43,14 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             required
+            className="border border-gray-300 rounded px-4 py-2 w-64"
           />
-          <button type="submit">Login</button>
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            Login
+          </button>
         </form>
-        <p>
-          Don't have an account? <Link to="/register">Register</Link>
+        <p className="mt-4">
+          Don't have an account? <Link to="/register" className="text-blue-500 hover:underline">Register</Link>
         </p>
       </div>
     );
