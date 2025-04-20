@@ -1,24 +1,21 @@
-/* index.css */
-
-/* 基础样式 */
-:root {
-  --primary-color: #ffeb3b;       /* 主黄色 */
-  --secondary-color: #333;       /* 文字深灰色 */
-  --background-start: #ffeb3b;   /* 渐变起始黄 */
-  --background-end: #ffffff;     /* 渐变结束白 */
+/* :root {
+  --primary-color: #ffffff;
+  --secondary-color: #333;
+  --background-start: #ffeb3b;
+  --background-end: #ffffff;
 }
 
 body, html, #root {
   margin: 0;
   padding: 0;
-  height: 100%; /* Ensure full height coverage */
-  width: 100%;  /* Ensure full width coverage */
+  height: 100%;
+  width: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Helvetica', 'Arial', sans-serif;
   background: linear-gradient(135deg, 
     var(--background-start) 0%, 
     var(--background-end) 100%
@@ -27,26 +24,23 @@ body {
   overflow: hidden;
 }
 
-/* 根容器铺满全屏 */
 #root {
   display: flex;
   flex-direction: column;
-  height: 100vh;                /* 关键改动：强制视口高度 */
+  height: 100vh;
 }
 
-/* 主内容区自适应 */
 .main-content {
-  flex: 1;                      /* 关键属性：填充剩余空间 */
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  box-sizing: border-box;       /* 包含padding不溢出 */
+  box-sizing: border-box;
 }
 
-/* 响应式调整 */
 @media (max-width: 768px) {
   .main-content {
     padding: 10px;
   }
-}
+} */

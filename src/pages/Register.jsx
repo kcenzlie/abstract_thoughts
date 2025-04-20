@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import supabase from '../helper/supabaseClient';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/auth-context';
-// import '../css/Register.css';
 
 const Register = () => {
     const [email, setEmail] = useState("");
@@ -25,7 +24,7 @@ const Register = () => {
     };
   
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <div className="flex flex-col items-center justify-center min-h-screen">
         <h2 className="text-2xl font-bold mb-4">Register</h2>
         {message && <div className="text-red-500 mb-4">{message}</div>}
         <form onSubmit={handleSubmit} className="space-y-4">

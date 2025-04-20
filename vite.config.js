@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react()],
   base: '/abstract_thoughts/',
   build: {
     outDir: 'dist',
@@ -14,5 +13,13 @@ export default defineConfig({
         entryFileNames: 'assets/[name].[hash].js'
       }
     }
-  }
+  },
+  server: {
+    hmr: {
+      overlay: false, // Disable HMR overlay
+    }
+  },
+  css: {
+    postcss: './postcss.config.js', // Explicit path to PostCSS config
+  },
 })

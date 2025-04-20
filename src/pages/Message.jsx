@@ -125,39 +125,33 @@ const Message = () => {
         };
     }, []);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div className="text-center text-gray-500 mt-10">Loading...</div>;
 
     return (
-        <div>
-            <h2>Your Posts and Comments</h2>
+        <div className="p-6 max-w-4xl mx-auto">
+            <h2 className="text-xl font-medium mb-4">Your Posts and Comments</h2>
             {posts.length === 0 ? (
-                <p>You have not created any posts yet.</p>
+                <p className="text-gray-600">You have not created any posts yet.</p>
             ) : (
-                <div style={{ maxHeight: '500px', overflowY: 'auto', border: '1px solid #ccc', padding: '10px' }}>
-                    <ul>
+                <div className="max-h-[500px] overflow-y-auto">
+                    <ul className="space-y-6">
                         {posts.map((post) => (
-                            <li key={post.id} style={{ 
-                                display: 'flex', 
-                                alignItems: 'center', 
-                                justifyContent: 'space-between',
-                                padding: '10px',
-                                marginBottom: '10px',
-                                borderRadius: '5px',
-                                border: '1px solid #eee',
-                                maxWidth: '100%', /* Prevent card from overflowing */
-                                wordWrap: 'break-word' /* Ensure long text wraps */
-                            }}>
+                            <li key={post.id} className="p-4 border-b border-gray-200">
                                 <div>
-                                    <h3>{post.post}</h3>
-                                    <small>Created at: {new Date(post.created_at).toLocaleString()}</small>
-                                    <ul>
+                                    <h3 className="text-lg font-semibold text-gray-800">{post.post}</h3>
+                                    <small className="text-gray-500 block mt-1">
+                                        Created at: {new Date(post.created_at).toLocaleString()}
+                                    </small>
+                                    <ul className="mt-3 space-y-3">
                                         {!post.Comments?.length ? (
-                                            <li>No comments yet.</li>
+                                            <li className="text-gray-500">No comments yet.</li>
                                         ) : (
                                             post.Comments.map((comment) => (
-                                                <li key={comment.id}>
-                                                    <p>{comment.comments}</p>
-                                                    <small>Commented at: {new Date(comment.created_at).toLocaleString()}</small>
+                                                <li key={comment.id} className="p-3 bg-gray-100 rounded">
+                                                    <p className="text-gray-700">{comment.comments}</p>
+                                                    <small className="text-gray-500 block mt-1">
+                                                        Commented at: {new Date(comment.created_at).toLocaleString()}
+                                                    </small>
                                                 </li>
                                             ))
                                         )}

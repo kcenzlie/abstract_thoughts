@@ -7,7 +7,7 @@ const NavBar = () => {
     const [hasNewComments, setHasNewComments] = useState(false);
     const [lastVisitTime, setLastVisitTime] = useState(null);
     const location = useLocation();
-    const navigate = useNavigate();
+
 
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {
@@ -136,18 +136,19 @@ const NavBar = () => {
     };
 
     return (
-        <nav className="flex flex-col w-64 bg-yellow-300 shadow-md fixed top-0 left-0 z-50">
-            <div className="mb-4">
-                <Link to="/" className="text-xl font-bold text-gray-800 hover:text-black">Home</Link>
-            </div>
-            <div className="space-y-2">
-                <Link to="/write" className="block text-lg text-gray-800 hover:text-black">Write</Link>
-                <Link to="/dashboard" className="block text-lg text-gray-800 hover:text-black">Dashboard</Link>
-                <Link to="/message" className="block text-lg text-gray-800 hover:text-black" onClick={handleMessageClick}>
-                    Message 
-                    {hasNewComments && (
-                        <span className="text-pink-500 ml-2 animate-pulse">💗</span>
-                    )}
+        <nav className="p-4 flex justify-between items-center border-b border-gray-300">
+            <Link to="/" className="text-lg font-semibold text-gray-700">
+                Abstract Thoughts
+            </Link>
+            <div className="flex gap-6">
+                <Link to="/write" className="text-gray-600 hover:text-gray-800">
+                    Write
+                </Link>
+                <Link to="/dashboard" className="text-gray-600 hover:text-gray-800">
+                    Dashboard
+                </Link>
+                <Link to="/message" className="text-gray-600 hover:text-gray-800" onClick={handleMessageClick}>
+                    Messages {hasNewComments && <span className="text-red-500">💗</span>}
                 </Link>
             </div>
         </nav>

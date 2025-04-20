@@ -1,83 +1,23 @@
-
-body {
-  margin: 0; /* This removes the default margin */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: #f9f9f9; /* Light gray background */
-  color: #333;
+/* body {
+  margin: 0; 
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
+  background-color: #f4d5d5; 
   line-height: 1.6;
-}
+  overflow-y: auto; 
+} 
 
-/* 导航栏样式 */
-.navbar {
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #ffffff; /* 纯色背景 */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.navbar-brand a {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.navbar-brand a:hover {
-  color: #000;
-  transform: scale(1.1);
-}
-
-.navbar-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.navbar-links a {
-  font-size: 1rem;
-  color: #333;
-  text-decoration: none;
-  position: relative;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.navbar-links a:hover {
-  color: #000;
-  transform: scale(1.1);
-}
-
-.navbar-links a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: #000;
-  bottom: -5px;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
-}
-
-.navbar-links a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-/* 主要内容区域样式 */
 .main-content {
-  flex: 1;
-  background-color: #ffffff;
+  background-color: #fefdea;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   animation: fadeIn 1s ease;
-}
+  min-width: 100%; 
+  min-height: 100vh; 
+  padding: 1rem;
+  animation: fadeIn 1s ease;
+  overflow-y: auto; 
+} */
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   0% {
       opacity: 0;
   }
@@ -86,7 +26,7 @@ body {
   }
 }
 
-/* 动画效果 */
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -99,32 +39,27 @@ body {
   }
 }
 
-/* 响应式设计 */
 @media (max-width: 768px) {
-  .navbar {
-      flex-direction: column;
-      padding: 1rem;
-  }
-
-  .navbar-links {
-      margin-top: 1rem;
-  }
-
   .main-content {
     padding: 1rem;
+  }
+  .container {
+    flex-direction: column; 
   }
 }
 
 .App {
-  display: flex;
-  min-height: 100vh;
-  background-color: #f9f9f9;
+  display: flex; */
+  /* flex-direction: column; 
+  min-height: 100vh; 
+  background-color: #c2efcf;
   padding: 1rem;
+  animation: fadeIn 1s ease;
+  overflow-y: auto; 
 }
 
-/* 全局样式重置 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+}  */

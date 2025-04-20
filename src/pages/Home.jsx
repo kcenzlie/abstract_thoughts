@@ -1,26 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/auth-context"; // Import useAuth
-import Lighting from "../blocks/Backgrounds/Lightning/Lightning"; // Import Lighting component
 
 function Home() {
     const { user } = useAuth(); // Get user from context
 
     return (
-        <div className="relative overflow-hidden h-screen w-screen">
-            <div className="absolute inset-0 z-0">
-                <Lighting hue={230} intensity={1.5} speed={1.2} size={1.2} />
-            </div>
-            <div className="relative z-10 flex flex-col items-center justify-center h-full">
+        <div className="bg-white text-gray-800">
+            <header className="text-gray-800 p-2 text-center text-lg">
+            Hello, one of the soul-bearing beings on Earth. 
+            </header>
+            <header className="text-gray-800 p-2 text-center text-lg">
+            Welcome to the abstract depths of your inner self. 
+            </header>
+            <main className="p-8 max-w-3xl mx-auto">
                 {user ? (
-                    <h1 className="text-2xl font-bold">Hello, you are logged in.</h1>
+                    <h2 className="text-lg font-medium">You are logged in.</h2>
                 ) : (
-                    <div className="space-x-4">
-                        <Link to="/register" className="text-blue-500 hover:underline">Register</Link>
+                    <section className="mb-8">
+                        <Link to="/register" className="text-blue-500 hover:underline mr-4">Register</Link>
                         <Link to="/login" className="text-blue-500 hover:underline">Login</Link>
-                    </div>
+                    </section>
                 )}
-            </div>
+            </main>
         </div>
     );
 }
