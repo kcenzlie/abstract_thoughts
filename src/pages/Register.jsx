@@ -25,9 +25,9 @@ const Register = () => {
   
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <h2 className="text-2xl font-bold mb-4">Register</h2>
+        <h2 className="text-2xl font-bold mb-4 text-pink-500">Register</h2>
         {message && <div className="text-red-500 mb-4">{message}</div>}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 space-x-1">
           <input
             type="email"
             value={email}
@@ -44,12 +44,12 @@ const Register = () => {
             required
             className="border border-gray-300 rounded px-4 py-2 w-64"
           />
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+          <button type="submit" className="bg-purple-300 text-white px-4 py-2 rounded hover:bg-pink-200">
             Create Account
           </button>
         </form>
         <p className="mt-4">
-          Already have an account? <Link to="/login" className="text-blue-500 hover:underline">Login</Link>
+          Already have an account? <Link to="/login" className="text-pink-500 hover:underline">Login :D</Link>
         </p>
       </div>
     );
