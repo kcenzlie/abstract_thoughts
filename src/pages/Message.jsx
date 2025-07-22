@@ -128,28 +128,28 @@ const Message = () => {
     if (loading) return <div className="text-center text-gray-500 mt-10">Loading...</div>;
 
     return (
-        <div className="p-6 max-w-4xl mx-auto bg-purple-100 rounded-lg shadow-lg">
-            <h2 className="text-xl font-bold mb-4 text-pink-500">Your Posts and Comments</h2>
+        <div className="p-6 w-3/4 mx-auto">
+            <h2 className="text-xl font-bold mb-4 text-gray-200">Archived ideas and comments</h2>
             {posts.length === 0 ? (
-                <p className="text-pink-600">You have not created any posts yet.</p>
+                <p className="text-pink-600">You have not created any posts yet. When you're ready, go ahead!</p>
             ) : (
-                <div className="max-h-[500px] overflow-y-auto bg-white rounded-lg shadow-md">
-                    <ul className="p-3 space-y-3">
+                <div className="max-h-[500px] overflow-y-auto bg-trasnparent">
+                    <ul className="p-3 space-y-2">
                         {posts.map((post) => (
-                            <li key={post.id} className="p-2 border-b border-black-200">
+                            <li key={post.id} className="p-2">
                                 <div>
-                                    <h3 className="text-lg text-blue-700">{post.post}</h3>
-                                    <small className="text-purple-400 block mt-1">
+                                    <h3 className="text-lg text-blue-500">{post.post}</h3>
+                                    <small className="text-gray-200 font-thin block mt-1">
                                         Created at: {new Date(post.created_at).toLocaleString()}
                                     </small>
                                     <ul className="mt-3 space-y-3">
                                         {!post.Comments?.length ? (
-                                            <li className="text-gray-500">No comments yet.</li>
+                                            <li className="text-gray-300 text-sm">No comments yet</li>
                                         ) : (
                                             post.Comments.map((comment) => (
-                                                <li key={comment.id} className="p-3 bg-pink-100 rounded">
-                                                    <p className="text-blue-700">{comment.comments}</p>
-                                                    <small className="text-purple-500 block mt-1">
+                                                <li key={comment.id} className="p-3">
+                                                    <p className="text-pink-400">{comment.comments}</p>
+                                                    <small className="text-gray-300 font-thin block mt-1">
                                                         Commented at: {new Date(comment.created_at).toLocaleString()}
                                                     </small>
                                                 </li>

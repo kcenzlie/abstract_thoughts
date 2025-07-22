@@ -135,19 +135,27 @@ const NavBar = () => {
         }
     };
 
+
+    if (location.pathname === "/") return null; // Home 页不显示 Navbar
+    if (location.pathname === "/register") return null;
+    if (location.pathname === "/login") return null;
+
     return (
         <nav className="p-1 pb-4 pt-4 flex justify-between items-center ">
-            <Link to="/" className="text-lg font-thin text-blue-700">
+            <Link to="/" className="text-2xl font-extrabold text-blue-700 hover:text-purple-300">
                 Abstract Thoughts
             </Link>
             <div className="flex gap-6">
-                <Link to="/write" className="text-blue-700 font-thin hover:text-pink-500 ">
+                <Link to="/about" className="text-xl text-blue-700 font-extrabold hover:text-pink-500 hover:underline">
+                    About
+                </Link>
+                <Link to="/write" className="text-xl text-blue-700 font-extrabold hover:text-pink-500 hover:underline">
                     Write
                 </Link>
-                <Link to="/dashboard" className="text-blue-700 font-thin hover:text-pink-500">
-                    Dashboard
+                <Link to="/dashboard" className="text-xl text-blue-700 font-extrabold hover:text-pink-500 hover:underline">
+                    Comment
                 </Link>
-                <Link to="/message" className="text-blue-700 font-thin hover:text-pink-500" onClick={handleMessageClick}>
+                <Link to="/message" className="text-xl text-blue-700 font-extrabold hover:text-pink-500 hover:underline"  onClick={handleMessageClick}>
                     Messages {hasNewComments && <span className="text-red-500">💗</span>}
                 </Link>
             </div>

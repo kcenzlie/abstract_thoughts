@@ -16,7 +16,7 @@ const Login = () => {
   
       try {
         await signIn(email, password);
-        navigate("/dashboard");
+        navigate("/write");
       } catch (error) {
         setMessage(error.message);
         setEmail("");
@@ -26,7 +26,7 @@ const Login = () => {
   
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <h2 className="text-2xl font-bold mb-4 text-pink-500">Login</h2>
+        <h2 className="text-3xl font-bold mb-3 text-pink-500">Login</h2>
         {message && <div className="text-red-500 mb-4">{message}</div>}
         <form onSubmit={handleSubmit} className="space-y-4 space-x-1">
           <input
@@ -35,7 +35,7 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
             required
-            className="border border-gray-300 rounded px-4 py-2 w-64"
+            className="rounded px-4 py-2 w-64"
           />
           <input
             type="password"
@@ -43,13 +43,13 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             required
-            className="border border-gray-300 rounded px-4 py-2 w-64"
+            className="rounded px-4 py-2 w-64"
           />
-          <button type="submit" className="bg-purple-300 text-white px-4 py-2 rounded hover:bg-pink-200">
+          <button type="submit" className="bg-pink-400 text-white px-4 py-2 rounded hover:bg-pink-200">
             Login
           </button>
         </form>
-        <p className="mt-4">
+        <p className="mt-4 text-gray-200">
           Don't have an account? <Link to="/register" className="text-pink-500 hover:underline">Register :)))</Link>
         </p>
       </div>

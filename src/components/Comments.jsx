@@ -72,34 +72,34 @@ const Comments = ({ postId, initialComments = [], refreshPost }) => {
 
     return (
         <div className="">
-            <form onSubmit={handleSubmit} className="flex items-start gap-2">
+            <form onSubmit={handleSubmit} className="flex items-start mb-5 gap-2">
                 <textarea
                     ref={textareaRef}
                     value={comment}
                     onChange={handleInput}
                     placeholder="Write your comment here..."
-                    className="flex-1 p-2 border rounded-lg mb-2 border-black-300 focus:outline-none focus:ring-2 focus:ring-pink-300 resize-none overflow-shown text-blue-700"
+                    className="flex-1 p-4 bg-gray-200 rounded mb-2 focus:outline-none focus:ring-2 focus:ring-pink-300 resize-none overflow-shown text-blue-700"
                     rows={1}
-                    style={{ minHeight: '70px', maxHeight: '300px', overflowY: 'auto' }}
+                    style={{ minHeight: '90px', maxHeight: '300px', overflowY: 'auto' }}
                 />
                 <button
                     type="submit"
-                    className="p-3 rounded-lg bg-white h-fit hover:font-bold hover:bg-pink-500 hover:text-white"
-                    style={{ minHeight: '70px', minWidth: '60px' }}
+                    className="p-4 rounded text-white bg-pink-400 h-fit hover:font-bold hover:bg-yellow-300"
+                    style={{ minHeight: '90px', minWidth: '60px' }}
                 >
                     Submit
                 </button>
             </form>
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
             <div>
-                <div className="font-bold text-pink-400">Comments:</div>
+                <div className="font-bold text-gray-200">Comments:</div>
                 {isLoading ? (
                     <p>Loading comments...</p>
                 ) : (
                     comments.map((c) => (
                         <div key={c.id}>
-                            <div className="text-blue-700">{c.comments}</div>
-                            <small>{new Date(c.created_at).toLocaleString()}</small>
+                            <div className="text-pink-500 pb-4 pt-4">{c.comments}</div>
+                            <small className="font-thin text-xs">{new Date(c.created_at).toLocaleString()}</small>
                         </div>
                     ))
                 )}

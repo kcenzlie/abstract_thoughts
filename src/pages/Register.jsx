@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import supabase from '../helper/supabaseClient';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/auth-context';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
@@ -15,7 +17,7 @@ const Register = () => {
   
       try {
         await signUp(email, password);
-        setMessage("Account created successfully!");
+        setMessage("Account created successfully! Check your email for verification!");
         setEmail("");
         setPassword("");
       } catch (error) {
@@ -25,7 +27,7 @@ const Register = () => {
   
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <h2 className="text-2xl font-bold mb-4 text-pink-500">Register</h2>
+        <h2 className="text-3xl font-bold mb-3 text-pink-500">Register</h2>
         {message && <div className="text-red-500 mb-4">{message}</div>}
         <form onSubmit={handleSubmit} className="space-y-4 space-x-1">
           <input
@@ -34,7 +36,7 @@ const Register = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
             required
-            className="border border-gray-300 rounded px-4 py-2 w-64"
+            className="rounded px-4 py-2 w-64"
           />
           <input
             type="password"
@@ -42,13 +44,13 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             required
-            className="border border-gray-300 rounded px-4 py-2 w-64"
+            className="rounded px-4 py-2 w-64"
           />
-          <button type="submit" className="bg-purple-300 text-white px-4 py-2 rounded hover:bg-pink-200">
+          <button type="submit" className="bg-pink-400 text-white px-4 py-2 rounded hover:bg-pink-200">
             Create Account
           </button>
         </form>
-        <p className="mt-4">
+        <p className="mt-4 text-gray-200">
           Already have an account? <Link to="/login" className="text-pink-500 hover:underline">Login :D</Link>
         </p>
       </div>
