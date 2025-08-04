@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/auth-context"; // Import useAuth
-import image from "../assets/logo_pink.png";
+import image from "../assets/logo_official.png";
 
 function Home() {
     const { user } = useAuth(); // Get user from context
@@ -13,7 +13,7 @@ function Home() {
                 <img
                     src={image}
                     alt="logo"
-                    className="w-1/4 mx-auto my-auto animate-pulse transition-all ease-in-out cursor-pointer"
+                    className="w-1/5 mx-auto my-auto animate-pulse transition-all ease-in-out cursor-pointer"
                     onClick={() => setExpand(true)}
                 />
             )}
@@ -26,10 +26,10 @@ function Home() {
                         style={{ background: 'black' }}
                     />
                     <header className="text-pink-400 p-2 text-center font-bold text-3xl md:text-4xl lg:text-5xl drop-shadow-lg">
-                        Hello, one of the soul-bearing beings on Earth.
+                        Curious soul captured? Good. 
                     </header>
-                    <header className="text-pink-200 p-10 text-center text-2xl md:text-2xl font-bold drop-shadow-lg">
-                        Welcome to the abstract depths of your inner self.
+                    <header className="text-pink-200 p-10 text-center text-2xl md:text-3xl font-bold drop-shadow-lg">
+                        Dive into the uncharted depths of you.
                     </header>
                     <main className="p-2 max-w-3xl mx-auto text-center">
                         {user ? (
